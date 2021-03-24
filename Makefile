@@ -1,2 +1,2 @@
 all:
-    echo "Built monede.live"
+	echo "Built monede.live"
