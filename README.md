@@ -1,2 +1,2 @@
 # monede.live
-Aggregator for cryptocurrencies trends and prices.
+Aggregator for cryptocurrency trends and prices.
