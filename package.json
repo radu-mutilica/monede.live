@@ -1,5 +1,6 @@
 {
-  "name": "monede.live-react",
+  "name": "monede.live",
+  "homepage" : "http://monede.live",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
