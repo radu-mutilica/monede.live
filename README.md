@@ -3,8 +3,3 @@
 
 Aggregator for cryptocurrency trends and prices.
 
-## How to build
-`make all`
-
-## tbc
-
