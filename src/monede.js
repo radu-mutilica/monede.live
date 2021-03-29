@@ -1,4 +1,4 @@
-import logo from './logo-white200.png';
+import logo from './assets/img/logo-white.svg';
 import './monede.css';
 
 function Monede() {
@@ -6,14 +6,12 @@ function Monede() {
         <div className="monede">
             <header className="monede-header centered">
                 <img src={logo} className="monede-logo" alt="logo"/>
-                <p>A cryptocurrency trends aggregator.</p>
+                <p>A cryptocurrency trends aggregator</p>
             </header>
             <div className="monede-footer centered">
-                {/*<a href={constants.website}>{constants.website}</a>*/}
             </div>
         </div>
     );
 }
-
 
 export default Monede;

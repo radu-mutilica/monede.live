@@ -1,31 +1,25 @@
 .monede {
-  background-color: #193034;
-  font-size: calc(5px + 1vmin);
-  color: #f3f3f3;
-}
-
-a {
-  color: rgba(255, 158, 158, 0.64);
+    background-color: #193034;
+    font-size: 22px;
+    color: #f3f3f3;
 }
 
 .centered {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .monede-header {
-  min-height: 90vh;
+    min-height: 90vh;
 }
 
 .monede-footer {
-  min-height: 10vh;
+    min-height: 10vh;
 }
 
-
-
 .monede-link {
-  color: #4deae3;
+    color: #4deae3;
 }

@@ -1,8 +1,8 @@
-import { render, screen } from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import Monede from './monede';
 
-test('renders learn react link', () => {
-  render(<Monede />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('under construction placeholder page', () => {
+    render(<Monede/>);
+    const linkElement = screen.getByText(/cryptocurrency trends aggregator/i);
+    expect(linkElement).toBeInTheDocument();
 });
