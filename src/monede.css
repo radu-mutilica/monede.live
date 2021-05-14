@@ -1,25 +1,27 @@
+@import url('http://fonts.cdnfonts.com/css/graphik');
+
 .monede {
-    background-color: #193034;
-    font-size: 22px;
-    color: #f3f3f3;
+    padding-top: 10vh !important;
+    font-family: Graphik;
+
 }
 
-.centered {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.container {
+    margin-left: 0;
+    margin-right: 0;
 }
 
-.monede-header {
-    min-height: 90vh;
+.tight-col {
+    padding-left: 0;
+    padding-right: 0;
 }
 
-.monede-footer {
-    min-height: 10vh;
+#brandTitle {
+    font-size: xx-large;
+    font-weight: 500;
 }
 
-.monede-link {
-    color: #4deae3;
+#brandIcon {
+    height: 30px;
+    margin-bottom: 8px;
 }

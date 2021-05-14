@@ -1,8 +1,8 @@
-import React from "react";
-import logo from './assets/img/logo-white.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './monede.css';
-import CoinChart from "./components/chart";
 import MonedeClient from "./client";
+import MonedeNavbar from "./components/navbar";
+import CoinList from "./components/coinlist";
 
 
 class Monede extends React.Component {
@@ -22,23 +22,13 @@ class Monede extends React.Component {
         )
     }
 
-
     render() {
         return (
             <div className="monede">
-                <header className="monede-header centered">
-                    <img src={logo} className="monede-logo" alt="logo"/>
-                    <p>A cryptocurrency trends aggregator</p>
-                </header>
-                {
-                    this.state.coins.map(
-                        (coin, _) => (
-                            <CoinChart coin={coin}>
+                <MonedeNavbar>
 
-                            </CoinChart>
-                        )
-                    )
-                }
+                </MonedeNavbar>
+                <CoinList coins={this.state.coins}></CoinList>
                 <div className="monede-footer centered">
                 </div>
             </div>
