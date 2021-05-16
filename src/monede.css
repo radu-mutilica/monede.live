@@ -6,6 +6,15 @@
 
 }
 
+#monedeBody {
+    width: 70%;
+    margin: auto;
+}
+
+.navbar {
+    border-bottom: 1px #f63c3c;
+}
+
 .container {
     margin-left: 0;
     margin-right: 0;
@@ -24,4 +33,43 @@
 #brandIcon {
     height: 30px;
     margin-bottom: 8px;
+}
+
+.coinIcon {
+    max-height: 5vh;
+}
+
+.redStat {
+    color: #f63c3c;
+}
+
+.greenStat {
+    color: #06c641;
+}
+
+.coinStatsTable > tr > td {
+    width: 50%;
+    font-weight: 300;
+}
+
+.coinStatsTable > tr > td:nth-child(1) {
+    color: #bfbfbf;
+}
+
+.coinContainer {
+    margin-bottom: 2vh
+}
+
+.coinPrice {
+    float: right;
+}
+
+.slimCurrencySign {
+    font-weight: 300;
+    font-size: 0.75em;
+    margin-right: 2px;
+}
+
+.borderless {
+    border: none;
 }

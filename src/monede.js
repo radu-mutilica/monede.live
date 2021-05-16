@@ -1,11 +1,14 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './monede.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./monede.css";
+import React from "react";
 import MonedeClient from "./client";
 import MonedeNavbar from "./components/navbar";
 import CoinList from "./components/coinlist";
 
 
 class Monede extends React.Component {
+    client = new MonedeClient()
+
     constructor(props) {
         super(props);
         this.state = {
@@ -14,7 +17,8 @@ class Monede extends React.Component {
     }
 
     componentDidMount() {
-        new MonedeClient().requestCoins().then(coins => {
+        this.client.requestCoins().then(coins => {
+            console.log(coins);
                 this.setState({
                     coins: coins
                 });
@@ -25,11 +29,9 @@ class Monede extends React.Component {
     render() {
         return (
             <div className="monede">
-                <MonedeNavbar>
-
-                </MonedeNavbar>
-                <CoinList coins={this.state.coins}></CoinList>
-                <div className="monede-footer centered">
+                <MonedeNavbar/>
+                <div id="monedeBody">
+                    <CoinList coins={this.state.coins}/>
                 </div>
             </div>
         )

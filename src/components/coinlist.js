@@ -1,5 +1,5 @@
 import React from 'react';
-import CoinCard from "./coincard";
+import CoinContainer from "./coincontainer";
 
 class CoinList extends React.Component {
 
@@ -9,7 +9,7 @@ class CoinList extends React.Component {
                 {
                     this.props.coins.map(
                         (coin, _) => (
-                           <CoinCard coin={coin}></CoinCard>
+                           <CoinContainer coin={coin}/>
                         )
                     )
                 }
