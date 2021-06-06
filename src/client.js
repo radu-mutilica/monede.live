@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from "axios";
 
 
 class MonedeClient {
@@ -7,25 +7,68 @@ class MonedeClient {
         this.restClient = new MonedeRESTClient()
         this.coins = []
     }
-    async requestCoins() {
-        this.coins = await this.restClient.requestCoins()
+
+    async getTopCoins() {
+        this.coins = await this.restClient.reqTopCoins()
+        console.log("Asdasdasdasd", this.coins)
         return this.coins
+    }
+
+    async getCoinMarket(symbol) {
+        return await this.restClient.reqCoinMarket(symbol);
+    }
+
+    async getCoinHistory(symbol, timeframe) {
+        return await this.restClient.reqCoinHistory(symbol, timeframe);
+    }
+
+    async getLatestExample() {
+        return await this.restClient.reqLatestExample();
     }
 }
 
 
 class MonedeRESTClient {
-    COINS_API = process.env.REACT_APP_MONEDE_BACKEND + '/api/v1/coins'
+    MONEDE_ENDPOINT = process.env.REACT_APP_MONEDE_BACKEND + '/api/v1'
 
     constructor() {
         this.coins = []
     }
-    async requestCoins() {
-        /* Returns all mountpoints visible to the user. */
+
+    async reqTopCoins() {
         if (this.coins.length === 0) {
-            return axios.get(this.COINS_API).then(response => response.data)
+            return axios.get(this.MONEDE_ENDPOINT + '/top').then(response => response.data)
         }
         return this.coins
+    }
+
+    async reqCoinMarket(symbol) {
+        return axios.get(
+            this.MONEDE_ENDPOINT + '/market',
+            {
+                params: {
+                    symbol: symbol,
+                }
+            }
+        ).then(response => response.data)
+    }
+
+    async reqCoinHistory(symbol, timeframe) {
+        return axios.get(
+            this.MONEDE_ENDPOINT + '/history',
+            {
+                params: {
+                    symbol: symbol,
+                    timeframe: timeframe
+                }
+            }
+        ).then(response => response.data)
+    }
+
+    async reqLatestExample() {
+        return axios.get(
+            this.MONEDE_ENDPOINT + '/latest'
+        ).then(response => response.data)
     }
 }
 

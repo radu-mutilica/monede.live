@@ -1,6 +1,8 @@
 import React from 'react';
-import StatsTable from "./statstable";
+import StatsTable from "./statsTable";
 import {Card, Col, Container, Row, Badge} from "react-bootstrap"
+
+// todo: add the image somewhere
 
 class StatsCard extends React.Component {
 

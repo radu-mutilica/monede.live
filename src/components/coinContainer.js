@@ -1,7 +1,7 @@
 import React from 'react';
-import CoinCard from "./coincard";
-import {Card, Col, Container, Row} from "react-bootstrap"
-import StatsCard from "./statscard";
+import CoinCard from "./coinCard";
+import {Col, Container, Row} from "react-bootstrap"
+import StatsCard from "./statsCard";
 
 class CoinContainer extends React.Component {
 

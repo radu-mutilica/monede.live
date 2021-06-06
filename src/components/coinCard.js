@@ -1,6 +1,6 @@
 import React from 'react';
-import CoinChart from "./coinchart";
-import {Card, Col, Container, Row} from "react-bootstrap"
+import CompositeChart from "./charts/compositeChart";
+import {Card, Col, Container, Row, Button, ButtonGroup} from "react-bootstrap"
 
 class CoinContainer extends React.Component {
 
@@ -10,9 +10,17 @@ class CoinContainer extends React.Component {
                 <Card>
                     <Card.Body>
                         <Card.Title>
-                            <Container>
+                            <Container fluid>
                                 <Row>
-                                    <Col sm={8}/>
+                                    <Col className="tight-col">
+                                        <div className="timeframeButtons">
+                                            <ButtonGroup aria-label="Timeframes">
+                                                <Button variant="link" size="sm">1H</Button>
+                                                <Button variant="link" size="sm">4H</Button>
+                                                <Button variant="link" size="sm">1D</Button>
+                                            </ButtonGroup>
+                                        </div>
+                                    </Col>
                                     <Col sm={4} className="tight-col">
                                         <div className="coinPrice">
                                             <h2>
@@ -27,7 +35,7 @@ class CoinContainer extends React.Component {
                             </Container>
                         </Card.Title>
                     </Card.Body>
-                    <CoinChart coin={this.props.coin}/>
+                    <CompositeChart coin={this.props.coin}/>
                 </Card>
             </div>
         );

@@ -1,13 +1,13 @@
 @import url('http://fonts.cdnfonts.com/css/graphik');
 
-.monede {
-    padding-top: 10vh !important;
-    font-family: Graphik;
+#monede {
+    padding-top: 8em !important;
+    font-family: Graphik, sans-serif;
 
 }
 
 #monedeBody {
-    width: 70%;
+    width: 60%;
     margin: auto;
 }
 
@@ -72,4 +72,30 @@
 
 .borderless {
     border: none;
+}
+
+.big-landing-text {
+    font-size: 4em;
+    line-height: 1;
+}
+
+.big-landing-text-link-container {
+    margin-top: 1em;
+}
+
+.big-landing-text-button-container {
+    margin-top: 1em;
+}
+
+.btn-xlg {
+    line-height: 2;
+}
+
+.big-plus {
+    font-size: 10em;
+    color: #bfbfbf;
+}
+
+.tech-image {
+    width: 20em;
 }

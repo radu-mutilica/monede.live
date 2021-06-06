@@ -27,16 +27,6 @@ class StatsTable extends React.Component {
                 <Table size="sm">
                     <tbody className="coinStatsTable">
                     <tr>
-                        <td className="statName">
-                            24 hours
-                        </td>
-                        <td className={
-                            Math.sign(this.props.coin.price_change_percentage_24h) === -1 ?
-                                "redStat" : "greenStat"}>
-                            {this.props.coin.price_change_percentage_24h}%
-                        </td>
-                    </tr>
-                    <tr>
                         <td className="statName">Market</td>
                         <td>
                             <Container fluid>

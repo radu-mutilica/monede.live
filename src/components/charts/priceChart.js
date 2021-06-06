@@ -1,23 +1,24 @@
 import React from 'react';
-import moment from 'moment'
-import {Area, ComposedChart, Line, ResponsiveContainer, Tooltip, XAxis, YAxis, BarChart, Bar} from 'recharts';
+import {Area, ComposedChart, Line, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
+import moment from "moment";
 
-class CoinChart extends React.Component {
+// todo: tooltip time formatting
+// todo: only show one tooltip on the price chart
+
+class PriceChart extends React.Component {
 
     render() {
         return (
             <div>
-                <div>
-                    <ResponsiveContainer height={200} width="100%">
+                <ResponsiveContainer height={200} width="100%">
                     <ComposedChart
                         data={this.props.coin.historical}
                         syncId={this.props.coin.symbol + "ChartsSyncId"}
                         margin="0">
-                        <defs>
                             <defs>
                                 <linearGradient id="priceGradient" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stopColor="#1ec4b6" stopOpacity={1}/>
-                                    <stop offset="100%" stopColor="#29b2a8" stopOpacity={0}/>
+                                    <stop offset="0%" stopColor="#1ec4b6" stopOpacity={0.4}/>
+                                    <stop offset="100%" stopColor="#ffffff" stopOpacity={0.3}/>
                                 </linearGradient>
                                 <linearGradient id="trendGradient" x1="0" y1="0" x2="0" y2="1">
                                     <stop offset="0%" stopColor="#ff5113" stopOpacity={1}/>
@@ -25,7 +26,6 @@ class CoinChart extends React.Component {
                                     <stop offset="100%" stopColor="#ff8d00" stopOpacity={0.3}/>
                                 </linearGradient>
                             </defs>
-                        </defs>
                         <XAxis
                             dataKey="time"
                             name="Time"
@@ -44,7 +44,7 @@ class CoinChart extends React.Component {
                             name="Trend"
                             orientation="right"
                             hide="true"
-                            domain={['dataMin', 'dataMax']}/>
+                            domain={[0, 100]}/>
                         <Area
                             name="Price"
                             yAxisId="left"
@@ -65,48 +65,9 @@ class CoinChart extends React.Component {
                         <Tooltip/>
                     </ComposedChart>
                 </ResponsiveContainer>
-                </div>
-                <div>
-                    <ResponsiveContainer height={100} width="100%">
-                    <BarChart
-                        data={this.props.coin.historical}
-                        syncId={this.props.coin.symbol + "ChartsSyncId"}>
-                        <defs>
-                            <defs>
-                                <linearGradient id="volumeGradient" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stopColor="#656768" stopOpacity={1}/>
-                                    <stop offset="100%" stopColor="#656768" stopOpacity={0}/>
-                                </linearGradient>
-                            </defs>
-                        </defs>
-                        <XAxis
-                            dataKey="time"
-                            name="Time"
-                            tickFormatter={(unixTime) => moment(unixTime).format('HH:mm')}
-                            type='number'
-                            domain={['dataMin', 'dataMax']}/>
-                        <YAxis
-                            name="Volume"
-                            yAxisId="left"
-                            dataKey="volume"
-                            type='number'
-                            hide='true'
-                            domain={[0, 'dataMax']}/>
-                        <Bar
-                            yAxisId="left"
-                            name="Volume"
-                            type="monotone"
-                            dataKey="volume"
-                            stroke="false"
-                            fill="#dde1e2"
-                            dot={false}/>
-                        <Tooltip/>
-                    </BarChart>
-                </ResponsiveContainer>
-                </div>
             </div>
         );
     }
 }
 
-export default CoinChart;
+export default PriceChart;
